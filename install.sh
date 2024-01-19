@@ -1,3 +1,5 @@
+apt install -y gawk docker-compose
+
 docker-compose up -d
 sleep 5
 chown -R 1000:1000 volumes/tor-*
