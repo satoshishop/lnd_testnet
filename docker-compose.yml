@@ -26,6 +26,8 @@ services:
       
   lnd_rtl:
     image: shahanafarooqui/rtl:0.15.0
+    ports:
+      - 3000:3000
     restart: unless-stopped
     environment:
       RTL_CONFIG_PATH: /root/RTL.conf

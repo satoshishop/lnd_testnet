@@ -1,9 +1,6 @@
 HiddenServiceDir /var/lib/tor/hidden_service/lndpeering
 HiddenServicePort 9735 lnd:9735
 
-HiddenServiceDir /var/lib/tor/hidden_service/lndridethelightning
-HiddenServicePort 80 lnd_rtl:3000
-
 SocksPort 0
 ExitRelay 0
 
