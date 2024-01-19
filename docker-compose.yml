@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  tor-incoming:
+    image: lncm/tor:latest
+    restart: unless-stopped
+    user: "1000"
+    volumes:
+        - ./config/torrc_tor_incoming:/etc/tor/torrc
+        - ./volumes/tor-incoming/keys:/var/lib/tor/hidden_service/
+        - ./volumes/tor-incoming/data:/run/tor/data
+
+  tor-outgoing:
+    image: lncm/tor:latest
+    restart: unless-stopped
+    user: "1000"
+    volumes:
+        - ./config/torrc_tor_outgoing:/etc/tor/torrc
+        - ./volumes/tor-outgoing/data:/run/tor/data
+
+  lnd:
+    image: 66847c29e4/v0.17.3-beta.rc1
+    restart: unless-stopped
+    volumes:
+      - "./volumes/lnd:/root/.lnd"
+      - "./config/lnd.conf:/root/.lnd/lnd.conf"
+      
+  lnd_rtl:
+    image: shahanafarooqui/rtl:0.15.0
+    restart: unless-stopped
+    environment:
+      RTL_CONFIG_PATH: /root/RTL.conf
+    volumes:
+      - "./volumes/lnd:/root/.lnd"
+      - "./volumes/ride_the_lightning:/root"
+      - "./config/RTL-Config.json:/root/RTL.conf/RTL-Config.json"
+
+

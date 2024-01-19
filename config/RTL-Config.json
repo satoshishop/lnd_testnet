@@ -1,0 +1,34 @@
+{
+  "port": "3000",
+  "defaultNodeIndex": 1,
+  "SSO": {
+    "rtlSSO": 0,
+    "rtlCookiePath": "/root",
+    "logoutRedirectLink": ""
+  },
+  "nodes": [
+    {
+      "index": 1,
+      "lnNode": "lightning network daemon",
+      "lnImplementation": "LND",
+      "Authentication": {
+        "macaroonPath": "/root/.lnd/data/chain/bitcoin/testnet",
+        "configPath": "/root/.lnd/lnd.conf",
+        "swapMacaroonPath": "/root/.loop/testnet"
+      },
+      "Settings": {
+        "userPersona": "OPERATOR",
+        "themeMode": "NIGHT",
+        "themeColor": "YELLOW",
+        "channelBackupPath": "/root/.lnd/data/chain/bitcoin/testnet",
+        "bitcoindConfigPath": "/root/.bitcoin/bitcoin.conf",
+        "fiatConversion": true,
+        "lnServerUrl": "https://lnd:8080/v1",
+        "swapServerUrl": "https://loopd:8081",
+        "logLevel": "INFO",
+        "currencyUnit": "EUR"
+      }
+    }
+  ],
+  "multiPass": "changeme"
+}
