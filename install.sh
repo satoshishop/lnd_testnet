@@ -9,9 +9,7 @@ gawk -i inplace -v data=$(cat $PWD/volumes/tor-incoming/keys/lndpeering/hostname
 docker-compose exec lnd lncli create
 
 echo "---"
-echo "satoshishop.de"
-echo "testnet node: litd1.blitznetzwerk.de"
-echo "uri: 02a494bb64f5ea26b759242f778c4049b00a85e595072e0f1cbab23a5d0cc32ade@47nvrj7orqewcq4ffx6p5ai2si5h3byvrzsz3lkadsszau5r43ozkiad.onion:9735"
+echo "hedgedoc: https://hedgedoc.satoshishop.de/t81gQ-s8Qqax_qatZZoxuQ?both"
 echo "---"
 
 echo "your ride the lightning url: http://localhost:3000 default password: changeme"
