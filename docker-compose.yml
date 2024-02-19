@@ -18,7 +18,7 @@ services:
         - ./volumes/tor-outgoing/data:/run/tor/data
 
   lnd:
-    image: 66847c29e4/v0.17.3-beta.rc1
+    image: 66847c29e4/lnd:v0.17.4-beta
     restart: unless-stopped
     volumes:
       - "./volumes/lnd:/root/.lnd"
