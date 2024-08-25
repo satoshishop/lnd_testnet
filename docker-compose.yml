@@ -18,12 +18,12 @@ services:
         - ./volumes/tor-outgoing/data:/run/tor/data
 
   lnd:
-    image: 66847c29e4/lnd:v0.17.4-beta
+    image: 66847c29e4/lnd:v0.18.0-beta.rc3
     restart: unless-stopped
     volumes:
       - "./volumes/lnd:/root/.lnd"
       - "./config/lnd.conf:/root/.lnd/lnd.conf"
-      
+
   lnd_rtl:
     image: shahanafarooqui/rtl:0.15.0
     ports:
